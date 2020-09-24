@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "860127839328",
+    "firebase_url": "https://todo-f8829.firebaseio.com",
+    "project_id": "todo-f8829",
+    "storage_bucket": "todo-f8829.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:860127839328:android:fc8e354267f40ffad42f05",
+        "android_client_info": {
+          "package_name": "com.example.intro_login_rigester"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "860127839328-ge5ld4girp99ttimqtdvlh3kofpql8d3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCOwOmYvPkUjBBkpoHdWC8usKmab-ldEL4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "860127839328-ge5ld4girp99ttimqtdvlh3kofpql8d3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
