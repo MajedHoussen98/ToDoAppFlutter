@@ -30,9 +30,8 @@ class _AuthFormState extends State<AuthForm> {
             ),
             TextFormField(
               onChanged: (value) => _email = value,
-              validator: (value) => value.isEmpty ? 'Enter your email' : null,
-              decoration: InputDecoration(
-                  labelText: "Enter your email", hintText: "test@email.com"),
+              validator: (value) => value.isEmpty ? 'Email' : null,
+              decoration: InputDecoration(hintText: "Enter your email"),
               keyboardType: TextInputType.emailAddress,
             ),
             SizedBox(
@@ -44,7 +43,7 @@ class _AuthFormState extends State<AuthForm> {
                   ? 'Your password must be larger than 6 character'
                   : null,
               decoration: InputDecoration(
-                labelText: "Enter your password",
+                hintText: "Password",
               ),
               obscureText: true,
             ),
@@ -58,12 +57,11 @@ class _AuthFormState extends State<AuthForm> {
                     if (widget.authType == AuthType.login) {
                       await authBase.loginWithEmailAndPassword(
                           _email, _password);
-                      Navigator.of(context).pushNamed("home");
+                      Navigator.of(context).pushReplacementNamed("home");
                     } else {
-                      print(_email);
                       await authBase.registerWithEmailAndPassword(
                           _email, _password);
-                      Navigator.of(context).pushNamed("home");
+                      Navigator.of(context).pushReplacementNamed("home");
                     }
                   }
                 },

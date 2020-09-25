@@ -11,49 +11,54 @@ class AuthActivity extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        body: SingleChildScrollView(
-      child: Column(
-        children: [
-          Stack(
-            children: [
-              Container(
-                //element taken half screen
-                height: MediaQuery.of(context).size.height * 0.5,
-                decoration: BoxDecoration(
-                  color: Colors.deepPurpleAccent,
-                  borderRadius: BorderRadius.only(
-                      bottomLeft: Radius.circular(30),
-                      bottomRight: Radius.circular(30)),
-                ),
+    return OrientationBuilder(
+      builder: (context, orientation){
+       return Scaffold(
+            body: SingleChildScrollView(
+              child: Column(
+                children: [
+                  Stack(
+                    children: [
+                      Container(
+                        //element taken half screen
+                        height: MediaQuery.of(context).size.height * 0.5,
+                        decoration: BoxDecoration(
+                          color: Theme.of(context).primaryColor,
+                          borderRadius: BorderRadius.only(
+                              bottomLeft: Radius.circular(30),
+                              bottomRight: Radius.circular(30)),
+                        ),
+                      ),
+                      Center(
+                        child: Column(
+                          children: [
+                            SizedBox(
+                              height: orientation == Orientation.portrait ? 50 : 30,
+                            ),
+                            Text(
+                              "Hello!",
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontFamily: "Bangers",
+                                  fontSize: orientation == Orientation.portrait ? 90.0: 50,
+                                  letterSpacing: 2),
+                            ),
+                            Image.asset(
+                              "assets/images/intro.png",
+                              width: orientation == Orientation.portrait ? 270: 300,
+                              height: orientation == Orientation.portrait ? 300: 120,
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                  AuthForm(authType: authType,),
+                ],
               ),
-              Center(
-                child: Column(
-                  children: [
-                    SizedBox(
-                      height: 50,
-                    ),
-                    Text(
-                      "Hello!",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontFamily: "Bangers",
-                          fontSize: 90,
-                          letterSpacing: 2),
-                    ),
-                    Image.asset(
-                      "assets/images/intro.png",
-                      width: 270,
-                      height: 300,
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          ),
-          AuthForm(authType: authType,),
-        ],
-      ),
-    ));
+            ));
+
+      },
+    );
   }
 }

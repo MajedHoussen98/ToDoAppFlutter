@@ -20,7 +20,7 @@ class IntroActivity extends StatelessWidget {
               ),
               OriginalButton(
                 text: "Get Started",
-                onPressed: () => Navigator.of(context).pushNamed("login"),
+                onPressed: () => Navigator.of(context).pushReplacementNamed("login"),
                 textColor: Colors.deepPurpleAccent,
                 backgroundColor: Colors.white,
               ),

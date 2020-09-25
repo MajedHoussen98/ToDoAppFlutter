@@ -1,5 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:intro_login_rigester/activates/add_task.dart';
 import 'package:intro_login_rigester/activates/auth_activity.dart';
 import 'package:intro_login_rigester/activates/home_activity.dart';
 import 'activates/intro_activity.dart';
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: "Flutter App",
+      title: "ToDO App",
       theme: ThemeData(
         primaryColor: Colors.deepPurpleAccent,
         textTheme: TextTheme(
@@ -25,8 +26,10 @@ class MyApp extends StatelessWidget {
               fontSize: 22,
               color: Colors.black.withAlpha(160),
               fontWeight: FontWeight.bold),
-          headline3: TextStyle(fontSize: 20, color: Colors.white.withAlpha(10)),
-          headline4: TextStyle(fontSize: 16),
+          headline3:
+              TextStyle(fontSize: 20, color: Colors.white.withAlpha(140)),
+          headline4:
+              TextStyle(fontSize: 16, color: Colors.black.withAlpha(120)),
         ),
         inputDecorationTheme: InputDecorationTheme(
           filled: true,
@@ -51,6 +54,7 @@ class MyApp extends StatelessWidget {
               authType: AuthType.register,
             ),
         "home": (context) => HomeActivity(),
+        "add_task": (context) => AddTask(),
       },
     );
   }
